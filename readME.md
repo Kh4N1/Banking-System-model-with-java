@@ -11,6 +11,7 @@ A simple Spring Boot project demonstrating database table structure for a bankin
 - [Features](#features)
 - [Technologies Used](#technologies-used)
 
+
 ## Prerequisites
 
 - Java JDK 17
