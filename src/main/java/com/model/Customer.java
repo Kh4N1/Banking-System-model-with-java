@@ -4,6 +4,7 @@ import lombok.Data;
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "customers")
@@ -39,4 +40,12 @@ public class Customer {
 
     @Column(nullable = false)
     private Date registrationDate;
+
+    @ManyToMany
+    @JoinTable(
+        name = "customer_branches",
+        joinColumns = @JoinColumn(name = "customer_id"),
+        inverseJoinColumns = @JoinColumn(name = "branch_id")
+    )
+    private Set<Branch> branches;
 }

@@ -2,6 +2,7 @@ package com.model;
 
 import lombok.Data;
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "branches")
@@ -24,4 +25,7 @@ public class Branch {
     private String phoneNumber;
 
     private String managerName;
+
+    @ManyToMany(mappedBy = "branches")
+    private Set<Customer> customers;
 }
