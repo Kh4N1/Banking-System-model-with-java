@@ -32,8 +32,8 @@ public class Customer {
     @Column(nullable = false)
     private String phoneNumber;
 
-    @Column(nullable = false)
-    private String address;
+    @Embedded
+    private Address address;
 
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
     private List<Account> accounts;
